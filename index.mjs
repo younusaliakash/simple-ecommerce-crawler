@@ -1,5 +1,12 @@
 import puppeteer from 'puppeteer'
+//Queue
+import { Queue, Worker } from 'bullmq'
+import Redis from 'ioredis'
+import 'dotenv/config'
 
+const connection = new Redis(process.env.REDIS_Path, {
+    maxRetriesPerRequest: null
+})
 
 const browser = await puppeteer.launch({ headless: false })
 const page = await browser.newPage()
@@ -16,22 +23,27 @@ const extractProductInfo = (page, selector) => {
     }, selector)
 }
 
-for (let link of allProductsLink) {
+//Worker
+new Worker('product', async (job) => {
+    const link = job.data.url
+    console.log(link)
+
     const page = await browser.newPage()
-    await page.goto(link, { waitUntil: 'networkidle0' })
+    await page.goto(link, { waitUntil: 'networkidle2' })
 
     await page.waitForSelector('.product_title')
-    // const title = await page.evaluate(() => {
-    //     return document.querySelector('.product_title')?.innerHTML
-    // })
     const title = await extractProductInfo(page, '.product_title')
     const description = await extractProductInfo(page, '.woocommerce-product-details__short-description p')
     const price = await extractProductInfo(page, '.price .amount')
 
-    console.log({ link, title, description, price } )
+    console.log({ link, title, description, price })
 
     await page.close()
-}
+}, { connection })
 
-await page.close()
-await browser.close()
+
+const myQueue = new Queue('product', { connection })
+
+for (let link of allProductsLink) {
+    myQueue.add(link, { url: link }, { jobId: link })
+}
