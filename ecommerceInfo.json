@@ -1,0 +1,38 @@
+{
+  "https://demo.agnidesigns.com/halena/product/keyhole-back-printed-shirt/": {
+    "link": "https://demo.agnidesigns.com/halena/product/keyhole-back-printed-shirt/",
+    "title": "Keyhole-Back-Printed-Shirt",
+    "description": "In tristique velit a lobortis aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet massa eu pulvinar sagittis. Maecenas quam vulputate, dui sed, aliquet diam.",
+    "price": "$44.00"
+  },
+  "https://demo.agnidesigns.com/halena/product/printed-cotton-linen-popover-shirt/": {
+    "link": "https://demo.agnidesigns.com/halena/product/printed-cotton-linen-popover-shirt/",
+    "title": "Printed-Cotton-Linen-Popover-Shirt",
+    "description": "In tristique velit a lobortis aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet massa eu pulvinar sagittis. Maecenas quam vulputate, dui sed, aliquet diam.",
+    "price": "$29.00"
+  },
+  "https://demo.agnidesigns.com/halena/product/zip-cowboy-ankle-boots/": {
+    "link": "https://demo.agnidesigns.com/halena/product/zip-cowboy-ankle-boots/",
+    "title": "Zip cowboy ankle boots",
+    "description": "In tristique velit a lobortis aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet massa eu pulvinar sagittis. Maecenas quam vulputate, dui sed, aliquet diam.",
+    "price": "$129.00"
+  },
+  "https://demo.agnidesigns.com/halena/product/roll-over-backpack/": {
+    "link": "https://demo.agnidesigns.com/halena/product/roll-over-backpack/",
+    "title": "Roll-over backpack",
+    "description": "In tristique velit a lobortis aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet massa eu pulvinar sagittis. Maecenas quam vulputate, dui sed, aliquet diam.",
+    "price": "$272.00"
+  },
+  "https://demo.agnidesigns.com/halena/product/dobby-woven-popover-shirt/": {
+    "link": "https://demo.agnidesigns.com/halena/product/dobby-woven-popover-shirt/",
+    "title": "Dobby-Woven-Popover-Shirt",
+    "description": "In tristique velit a lobortis aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet massa eu pulvinar sagittis. Maecenas quam vulputate, dui sed, aliquet diam.",
+    "price": "$36.00"
+  },
+  "https://demo.agnidesigns.com/halena/product/leather-tote-backpack/": {
+    "link": "https://demo.agnidesigns.com/halena/product/leather-tote-backpack/",
+    "title": "Leather tote backpack",
+    "description": "In tristique velit a lobortis aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet massa eu pulvinar sagittis. Maecenas quam vulputate, dui sed, aliquet diam.",
+    "price": "$59.00"
+  }
+}

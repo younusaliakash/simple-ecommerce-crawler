@@ -4,6 +4,17 @@ import { Queue, Worker } from 'bullmq'
 import Redis from 'ioredis'
 import 'dotenv/config'
 
+//database
+import { Low } from 'lowdb'
+import { JSONFile } from 'lowdb/node'
+const db = new Low(new JSONFile('ecommerceInfo.json'), {})
+await db.read()
+
+const saveToDatabase = async (id, productData) => {
+    db.data[id] = productData;
+    await db.write();
+}
+
 const connection = new Redis(process.env.REDIS_Path, {
     maxRetriesPerRequest: null
 })
@@ -36,7 +47,8 @@ new Worker('product', async (job) => {
     const description = await extractProductInfo(page, '.woocommerce-product-details__short-description p')
     const price = await extractProductInfo(page, '.price .amount')
 
-    console.log({ link, title, description, price })
+    await saveToDatabase (link , { link, title, description, price })
+    // console.log({ link, title, description, price })
 
     await page.close()
 }, { connection })
